@@ -1,24 +1,19 @@
-# README
+## infratop-bookers2
+infratop-internのためのbookers2の作成repoです
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
+## 開発環境
 * Ruby version
 
-* System dependencies
+    * 3.1.2p20 (in rbenv)
 
-* Configuration
+* Rails version
 
-* Database creation
+    * 7.0.3.1
 
-* Database initialization
+* OS info
 
-* How to run the test suite
+    * ubuntu20.04LTS
 
-* Services (job queues, cache servers, search engines, etc.)
+* dependencies
 
-* Deployment instructions
-
-* ...
+    * rails7 default importmap (not use npm or yarn)
