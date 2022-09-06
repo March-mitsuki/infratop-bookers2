@@ -1,0 +1,26 @@
+<h1>Users#show</h1>
+<div>
+    <h3><%= @user.name %></h3>
+    <%= image_tag @user.get_profile_image(100,100) %>
+    <% if @user.id == current_user.id %>
+        <p><%= link_to "プロフィール編集", edit_user_path(@user) %></p>
+    <% end %>
+    <% @books.each do |item| %>
+        <div>Title</div>
+        <%= item.title %>
+        <div>Opinion</div>
+        <%= item.body %>
+        <div>---</div>
+    <% end %>
+</div>
+<div>
+    <div>
+        <%= form_with model: @new_book do |f| %>
+            <p>Title</p>
+            <%= f.text_field :title %>
+            <p>Opinion</p>
+            <%= f.text_field :body %>
+            <%= f.submit "Create Book" %>
+        <% end %>
+    </div>
+</div>
