@@ -10,9 +10,11 @@
                     <% if @book.user_id == current_user.id %>
                         <tr>
                             <td>
-                                <%= image_tag @book.user.get_profile_image(50,50) %>
-                                <br/>
-                                <%= @book.user.name %>
+                                <%= link_to user_path(@book.user_id) do %>
+                                    <%= image_tag @book.user.get_profile_image(50,50) %>
+                                    <br/>
+                                    <%= @book.user.name %>
+                                <% end %>
                             </td>
                             <td>
                                 <%= link_to book_path(@book.id), class: "text-decoration-none" do %>
@@ -32,9 +34,11 @@
                     <% else %>
                         <tr>
                             <td>
-                                <%= image_tag @book.user.get_profile_image(50,50) %>
-                                <br/>
-                                <%= @book.user.name %>
+                                <%= link_to user_path(@book.user_id) do %>
+                                    <%= image_tag @book.user.get_profile_image(50,50) %>
+                                    <br/>
+                                    <%= @book.user.name %>
+                                <% end %>
                             </td>
                             <td>
                                 <%= link_to book_path(@book.id), class: "text-decoration-none" do %>

@@ -33,7 +33,9 @@
                     <% @books.each do |item| %>
                         <tr>
                             <td>
-                                <%= image_tag item.user.get_profile_image(50,50) %>
+                                <%= link_to user_path(item.user.id) do %>
+                                    <%= image_tag item.user.get_profile_image(50,50) %>
+                                <% end %>
                             </td>
                             <td>
                                 <%= link_to book_path(item.id), class: "text-decoration-none" do %>
