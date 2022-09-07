@@ -1,7 +1,7 @@
 <div class="container px-5 px-sm-0">
     <div class="row">
         <div class="col-md-3">
-            <%= render "users/user_info", user: @user%>
+            <%= render "shared/user_info", user: @user%>
         </div>
         <div class="col-md-8 offset-md-1">
             <h2>Books</h2>
@@ -21,7 +21,9 @@
                                 <%= image_tag item.user.get_profile_image(50,50) %>
                             </td>
                             <td>
-                                <%= item.title %>
+                                <%= link_to book_path(item.id), class: "text-decoration-none" do %>
+                                    <%= item.title %>
+                                <% end %>
                             </td>
                             <td>
                                 <%= item.body %>
