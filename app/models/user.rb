@@ -10,7 +10,7 @@ class User < ApplicationRecord
   has_many :books, foreign_key: 'user_id', dependent: :destroy
 
   # validates
-  validates :name, length: { 
+  validates :name, uniqueness: true, length: { 
     minimum: 2, maximum: 20
   }
   validates :introduction, length: { 
