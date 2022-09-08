@@ -4,7 +4,10 @@ Rails.application.routes.draw do
 
   devise_for :users, controllers: { sessions: "sessions", registrations: "registrations" }
 
-  resources :books, only: [:index, :show, :create, :destroy, :edit, :update]
+  resources :books, only: [:index, :show, :create, :destroy, :edit, :update] do
+    resources :book_comments, only: [:create, :destroy]
+    resource :favorites, only: [:create, :destroy]
+  end
   resources :users, only: [:show, :edit, :update, :index]
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
