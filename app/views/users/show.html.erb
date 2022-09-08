@@ -30,6 +30,29 @@
                             <td>
                                 <%= item.body %>
                             </td>
+                            <td>
+                            <% if item.favorited_by?(current_user) %>
+                                <td>
+                                    <%= link_to book_favorites_path(item), data: { turbo_method: :delete }, class: "text-decoration-none" do %>
+                                        <i class="fa-solid fa-heart" style="color: red"></i>
+                                        <span style="color: red"><%= item.favorites.count %></span>
+                                    <% end %>
+                                </td>
+                            <% else %>
+                                <td>
+                                    <%= link_to book_favorites_path(item), data: { turbo_method: :post }, class: "text-decoration-none" do %>
+                                        <i class="fa-regular fa-heart"></i>
+                                        <span><%= item.favorites.count %></span>
+                                    <% end %>
+                                </td>
+                            <% end %>
+                            </td>
+                            <td>
+                                <span>
+                                    コメント数:
+                                    <%= item.book_comments.count %>
+                                </span>
+                            </td>
                         </tr>
                     <% end %>
                 </tbody>
