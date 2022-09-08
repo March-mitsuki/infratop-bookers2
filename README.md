@@ -1,13 +1,27 @@
-## infratop-bookers2
+## infratop-bookers2-favorites
 infratop-internのためのbookers2の作成repoです
+
+いいねとコメント機能追加したブランチです
 
 ## 使用方法
 まずはこのrepoをlocalにcloneして作業ディレクトリに入ります
+
 ```bash
 $ git clone https://github.com/March-mitsuki/infratop-bookers2.git
 
 $ cd infratop-bookers2
 ```
+
+ブランチが違うので切り替えます。
+
+**Note**
+
+タイピングミスがあるのでブランチ名が`favarate`になっています。申し訳ないですが、間違わないようにお願い申し上げます。
+
+```bash
+$ git checkout favarate
+```
+
 rails7からActiveStorageのデフォルト画像処理ライブラリーがvipsになったため、installしてない場合はまずinstallします
 ```bash
 # macOSを使っているならbrew経由でinstallするのは一番楽です
